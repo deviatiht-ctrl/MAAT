@@ -1193,7 +1193,7 @@ function buildFollowEmailHTML(data) {
             </div>
 
             <div class="cta-box">
-              <h3 style="color: #2e7d32; margin: 0 0 10px 0;">🎯 Découvrez nos rituels</h3>
+              <h3 style="color: #2e7d32; margin: 0 0 10px 0;">🎯 Découvrez nos services</h3>
               <p style="color: #666; margin: 0 0 15px 0;">Explorez notre gamme complète de soins et trouvez le rituel parfait pour vous</p>
               <a href="https://dalight-headspa.com/pages/services.html" class="cta-button">Voir nos Services</a>
             </div>

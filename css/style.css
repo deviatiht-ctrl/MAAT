@@ -1068,6 +1068,28 @@ body.is-admin .mobile-nav .admin-link {
   gap: 1rem;
 }
 
+/* ── Cvisual Credit ── */
+.footer-credit {
+  width: 100%;
+  text-align: center;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(74, 55, 40, 0.1);
+  font-size: 0.75rem;
+  color: rgba(74, 55, 40, 0.5);
+}
+
+.footer-credit a.cvisual-link {
+  color: var(--gold-500);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.footer-credit a.cvisual-link:hover {
+  color: var(--marron-700);
+  text-decoration: underline;
+}
+
 .mobile-nav {
   position: fixed;
   bottom: 1rem;

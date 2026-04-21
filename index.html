@@ -17,8 +17,53 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/responsive.css" />
+    <!-- Three.js & GSAP for immersive animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   </head>
   <body data-page="home">
+    <!-- IMMERSIVE MOBILE VIDEO HERO (full viewport, behind everything) -->
+    <div class="hero-video-mobile" id="hero-video-mobile">
+      <div class="hero-video-container">
+        <video 
+          src="./assets/video.MOV" 
+          autoplay 
+          muted 
+          loop 
+          playsinline 
+          preload="auto"
+          id="hero-video"
+        ></video>
+        <div class="hero-video-overlay"></div>
+        <canvas id="hero-particles"></canvas>
+      </div>
+      <div class="hero-video-content">
+        <div class="immersive-text-container">
+          <p class="immersive-kicker" id="immersive-kicker">L'Art du Bien-Être</p>
+          <h1 class="immersive-title" id="immersive-title">
+            <span class="word">Un</span>
+            <span class="word">univers</span>
+            <span class="word">dédié</span>
+            <span class="word">à</span>
+            <span class="word">votre</span>
+            <span class="word highlight">éclat</span>
+          </h1>
+          <p class="immersive-subtitle" id="immersive-subtitle">Head Spa · Massages · Formations · Boutique</p>
+          <div class="immersive-actions">
+            <a href="./pages/reservation.html" class="btn-immersive primary" id="immersive-cta"><i data-lucide="calendar-check"></i> Réserver maintenant</a>
+            <a href="./pages/services.html" class="btn-immersive secondary"><i data-lucide="sparkles"></i> Nos Services</a>
+            <a href="./pages/formation.html" class="btn-immersive secondary"><i data-lucide="graduation-cap"></i> DALIGHT School</a>
+            <a href="./pages/shop.html" class="btn-immersive secondary"><i data-lucide="shopping-bag"></i> Boutique</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>Découvrir</span>
+        <i data-lucide="chevron-down"></i>
+      </div>
+    </div>
+
     <header class="site-header">
       <nav class="top-nav">
         <a class="brand" href="./index.html">
@@ -99,6 +144,7 @@
             </li>
           </ul>
         </div>
+
         <div class="hero-visual hero-photo-grid">
           <article class="hpg-card">
             <img src="assets/images/massage.jpg" alt="Massage thérapeutique DALIGHT" />
@@ -199,7 +245,7 @@
           <p class="kicker">Suivez l'Expérience</p>
           <h2>Plongez dans l'univers DALIGHT sur nos réseaux.</h2>
           <p>
-            Nous répondons à vos messages entre 09 h et 21 h (GMT-5). Découvrez nos rituels et conseils bien-être.
+            Nous répondons à vos messages entre 09 h et 21 h (GMT-5). Découvrez nos services et conseils bien-être.
           </p>
         </div>
         <div class="social-hub__grid">
@@ -240,7 +286,7 @@
             <div>
               <h3>TikTok</h3>
               <p>@dalightbeauty</p>
-              <a href="https://www.tiktok.com/@dalightbeauty?_r=1&_t=ZS-95gBGSdvje8" target="_blank" rel="noreferrer">Découvrir nos rituels</a>
+              <a href="https://www.tiktok.com/@dalightbeauty?_r=1&_t=ZS-95gBGSdvje8" target="_blank" rel="noreferrer">Découvrir nos services</a>
             </div>
           </article>
           <article class="social-card qr-card">
@@ -261,8 +307,11 @@
       <p>© <span id="year"></span> DALIGHT. Tous droits réservés.</p>
       <div class="footer-links">
         <a href="./pages/login.html">Espace client</a>
-        <a href="./pages/services.html">Nos Rituels</a>
+        <a href="./pages/services.html">Nos Services</a>
         <a href="mailto:dalightbeauty15mai@gmail.com">dalightbeauty15mai@gmail.com</a>
+      </div>
+      <div class="footer-credit">
+        <span>Conçu avec soin par <a href="https://cvisual.netlify.app/" target="_blank" rel="noopener" class="cvisual-link">Cvisual</a></span>
       </div>
     </footer>
 
@@ -314,6 +363,142 @@
         }
         initChatWidget();
       });
+    </script>
+
+    <!-- Immersive Mobile Hero Animations (Three.js + GSAP) -->
+    <script>
+    (function() {
+      // Only run on mobile/tablet
+      const isMobile = window.matchMedia('(max-width: 900px)').matches;
+      if (!isMobile) return;
+
+      const videoSection = document.getElementById('hero-video-mobile');
+      if (!videoSection) return;
+
+      // ============================================
+      // GSAP TEXT ANIMATIONS
+      // ============================================
+      gsap.registerPlugin(ScrollTrigger);
+
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+      // Kicker animation
+      tl.fromTo('#immersive-kicker', 
+        { opacity: 0, y: 30, letterSpacing: '0.2em' },
+        { opacity: 1, y: 0, letterSpacing: '0.05em', duration: 1.2 }
+      );
+
+      // Title words stagger animation
+      tl.fromTo('#immersive-title .word',
+        { opacity: 0, y: 50, rotateX: -90 },
+        { 
+          opacity: 1, 
+          y: 0, 
+          rotateX: 0, 
+          duration: 0.8,
+          stagger: 0.12
+        },
+        '-=0.6'
+      );
+
+      // Subtitle fade in
+      tl.fromTo('#immersive-subtitle',
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.8 },
+        '-=0.4'
+      );
+
+      // CTA buttons bounce in
+      tl.fromTo('.immersive-actions .btn-immersive',
+        { opacity: 0, scale: 0.8, y: 30 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'back.out(1.7)' },
+        '-=0.3'
+      );
+
+      // Scroll hint fade in
+      tl.fromTo('.hero-scroll-hint',
+        { opacity: 0 },
+        { opacity: 1, duration: 1 },
+        '-=0.2'
+      );
+
+      // Parallax effect on scroll
+      gsap.to('#immersive-title', {
+        scrollTrigger: {
+          trigger: '#hero-video-mobile',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1
+        },
+        y: -80,
+        opacity: 0.3
+      });
+
+      // ============================================
+      // THREE.JS PARTICLES
+      // ============================================
+      const canvas = document.getElementById('hero-particles');
+      if (canvas && window.THREE) {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        // Gold particles
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particleCount = 80;
+        const posArray = new Float32Array(particleCount * 3);
+        
+        for (let i = 0; i < particleCount * 3; i++) {
+          posArray[i] = (Math.random() - 0.5) * 4;
+        }
+        
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        
+        const particlesMaterial = new THREE.PointsMaterial({
+          size: 0.02,
+          color: 0xD4AF37, // Gold color
+          transparent: true,
+          opacity: 0.6,
+          blending: THREE.AdditiveBlending
+        });
+        
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+        
+        camera.position.z = 2;
+
+        // Animation loop
+        let frameCount = 0;
+        function animate() {
+          frameCount++;
+          // Render every 2nd frame for performance
+          if (frameCount % 2 === 0) {
+            particlesMesh.rotation.x += 0.001;
+            particlesMesh.rotation.y += 0.001;
+            renderer.render(scene, camera);
+          }
+          requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Handle resize
+        window.addEventListener('resize', () => {
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+        }, { passive: true });
+      }
+
+      // Smooth video playback handling
+      const video = document.getElementById('hero-video');
+      if (video) {
+        video.addEventListener('loadedmetadata', () => {
+          video.play().catch(e => console.log('Video autoplay:', e));
+        });
+      }
+    })();
     </script>
   </body>
 </html>
