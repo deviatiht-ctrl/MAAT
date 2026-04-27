@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DALIGHT — L'Art du Bien-Être et de l'Excellence</title>
-    <link rel="icon" href="./assets/images/logodaligth.png?v=2" type="image/png" />
+    <title>MA'AT — Salon de Luxe & Spa</title>
+    <link rel="icon" href="./assets/images/maatlogo.png?v=2" type="image/png" />
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#4A3728">
+    <meta name="theme-color" content="#0D3328">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,7 +27,7 @@
     <div class="hero-video-mobile" id="hero-video-mobile">
       <div class="hero-video-container">
         <video
-          src="./assets/video.mp4"
+          src="./assets/maatvideo.MP4"
           autoplay
           loop
           playsinline
@@ -45,7 +45,7 @@
       </div>
       <div class="hero-video-content">
         <div class="immersive-text-container">
-          <p class="immersive-kicker" id="immersive-kicker">L'Art du Bien-Être</p>
+          <p class="immersive-kicker" id="immersive-kicker" style="color: var(--gold-500); font-weight: 600;">MA'AT</p>
           <h1 class="immersive-title" id="immersive-title">
             <span class="word">Un</span>
             <span class="word">univers</span>
@@ -54,12 +54,11 @@
             <span class="word">votre</span>
             <span class="word highlight">éclat</span>
           </h1>
-          <p class="immersive-subtitle" id="immersive-subtitle">Head Spa · Massages · Formations · Boutique</p>
+          <p class="immersive-subtitle" id="immersive-subtitle">Salon de Beauté · Coiffure · Nails · Soins Premium · Spa de Luxe</p>
           <div class="immersive-actions">
             <a href="./pages/services.html" class="btn-immersive primary" id="immersive-cta"><i data-lucide="shopping-cart"></i> Réserver maintenant</a>
             <a href="./pages/services.html" class="btn-immersive secondary"><i data-lucide="sparkles"></i> Nos Services</a>
-            <a href="./pages/formation.html" class="btn-immersive secondary"><i data-lucide="graduation-cap"></i> DALIGHT School</a>
-            <a href="./pages/shop.html" class="btn-immersive secondary"><i data-lucide="shopping-bag"></i> Boutique</a>
+                        <a href="./pages/shop.html" class="btn-immersive secondary"><i data-lucide="shopping-bag"></i> Boutique</a>
           </div>
         </div>
       </div>
@@ -71,11 +70,11 @@
 
     <header class="site-header">
       <nav class="top-nav">
-        <a class="brand" href="./index.html">
-          <img class="brand-logo" src="./assets/images/logodaligth.png?v=2" alt="DALIGHT" />
-          <div>
-            <strong>DALIGHT</strong>
-            <small>L'Art du Bien-Être</small>
+        <a class="brand" href="./index.html" style="display: flex; align-items: center; gap: 0.75rem;">
+          <img src="./assets/images/maatlogo.png?v=2" alt="MA'AT Logo" style="height: 56px; width: auto; object-fit: contain; border-radius: 0; background: none;" />
+          <div class="brand-text" style="display: flex; flex-direction: column; align-items: flex-start;">
+            <strong style="font-size: 1.4rem; letter-spacing: 0.1em; color: var(--gold-500);">MA'AT</strong>
+            <small style="font-size: 0.75rem; opacity: 0.9;">Salon & Spa de Luxe</small>
           </div>
         </a>
         <button class="nav-toggle" aria-label="Ouvrir la navigation">
@@ -91,8 +90,12 @@
           <a href="./pages/follow.html">Suivre</a>
           <a href="./admin/dashboard.html" class="admin-link">Admin</a>
         </div>
-        <div class="nav-cta has-reserve-btn">
+        <div class="nav-cta has-reserve-btn" style="display: flex; gap: 0.5rem; align-items: center;">
           <a class="btn" href="./pages/services.html">Réserver</a>
+          <a class="btn ghost" id="auth-btn" href="./pages/login.html">
+            <i data-lucide="user" style="width: 16px; height: 16px;"></i>
+            <span>Connexion</span>
+          </a>
         </div>
       </nav>
       <section class="hero reveal-on-scroll">
@@ -105,7 +108,7 @@
               <span class="hsc-icon"><i data-lucide="calendar-check"></i></span>
               <div class="hsc-text">
                 <strong>Prendre Rendez-vous</strong>
-                <small>Disponible au spa &amp; à domicile · Delmas 65</small>
+                <small>Disponible au salon · 52, Avenue Panaméricaine</small>
               </div>
               <i data-lucide="chevron-right" class="hsc-arrow"></i>
             </a>
@@ -114,14 +117,6 @@
               <div class="hsc-text">
                 <strong>Soins &amp; Bien-Être</strong>
                 <small>Head Spa, massages thérapeutiques, soins capillaires personnalisés</small>
-              </div>
-              <i data-lucide="chevron-right" class="hsc-arrow"></i>
-            </a>
-            <a class="hsc-card hsc-school" href="./pages/formation.html">
-              <span class="hsc-icon"><i data-lucide="graduation-cap"></i></span>
-              <div class="hsc-text">
-                <strong>DALIGHT School</strong>
-                <small>Formations en massothérapie, cosmétiques &amp; décoration événementielle</small>
               </div>
               <i data-lucide="chevron-right" class="hsc-arrow"></i>
             </a>
@@ -145,29 +140,22 @@
               <span>Parcours thérapeutiques</span>
             </li>
             <li>
-              <strong>Delmas 65</strong>
-              <span>Faustin Premier Durandise #10</span>
+              <strong>52, Avenue Panaméricaine</strong>
+              <span>Spa de Luxe MA'AT</span>
             </li>
           </ul>
         </div>
 
         <div class="hero-visual hero-photo-grid">
           <article class="hpg-card">
-            <img src="assets/images/massage.jpg" alt="Massage thérapeutique DALIGHT" />
+            <img src="assets/images/massage.jpg" alt="Massage thérapeutique MA'AT" />
             <div class="hpg-overlay">
               <span class="hpg-tag">Soins &amp; Bien-Être</span>
               <p>Massages thérapeutiques &amp; Head Spa</p>
             </div>
           </article>
           <article class="hpg-card">
-            <img src="assets/images/photo_2026-01-20_19-37-37.jpg" alt="DALIGHT School formations" />
-            <div class="hpg-overlay">
-              <span class="hpg-tag">DALIGHT School</span>
-              <p>Formations professionnelles certifiées</p>
-            </div>
-          </article>
-          <article class="hpg-card">
-            <img src="assets/images/relax and rejuvenate_ using argan oil for massages.jpg" alt="Boutique produits DALIGHT" />
+            <img src="assets/images/relax and rejuvenate_ using argan oil for massages.jpg" alt="Boutique produits MA'AT" />
             <div class="hpg-overlay">
               <span class="hpg-tag">Boutique</span>
               <p>Cosmétiques &amp; produits capillaires</p>
@@ -180,11 +168,12 @@
     <main>
       <section class="section reveal-on-scroll" id="experience">
         <div class="section-heading">
-          <p class="kicker">L'Expérience DALIGHT</p>
-          <h2>Un sanctuaire de sérénité, de rituels et d’élégance zen.</h2>
+          <p class="kicker">L'Expérience MA'AT</p>
+          <h2>Un sanctuaire de luxe dédié à votre beauté et votre sérénité.</h2>
           <p>
-            Nous allions l'expertise du soin capillaire à la douceur d'un accompagnement holistique. Chaque rituel
-            est une invitation au lâcher-prise dans un cadre épuré, aux senteurs apaisantes et naturelles.
+            MA'AT est un salon et spa de luxe où l'excellence du service rencontre l'art du bien-être. 
+            Dans un cadre raffiné aux tons vert et or, nos experts vous offrent une expérience sensorielle 
+            unique alliant soins premium, massages relaxants et beauté holistique.
           </p>
         </div>
         <div class="grid three">
@@ -212,19 +201,63 @@
         </div>
       </section>
 
-     
+      <!-- ═══════════════════════════════════════════
+           SECTION: SALON DE BEAUTÉ
+      ═══════════════════════════════════════════ -->
+      <section class="section tinted reveal-on-scroll" id="salon-beaute">
+        <div class="section-heading">
+          <p class="kicker" style="color: var(--gold-500);">Salon de Beauté</p>
+          <h2>Votre destination beauté complète.</h2>
+        </div>
+        <div class="grid three">
+          <article class="card feature">
+            <span style="color: var(--gold-500); margin-bottom: 0.5rem; display: block;">
+              <i data-lucide="hand" style="width: 32px; height: 32px;"></i>
+            </span>
+            <h3>Nails Art</h3>
+            <p>
+              Manucure, pédicure, pose de vernis semi-permanent, gel et nail art.
+              Des mains et des pieds impeccables pour sublimer votre élégance au quotidien.
+            </p>
+          </article>
+          <article class="card feature">
+            <span style="color: var(--gold-500); margin-bottom: 0.5rem; display: block;">
+              <i data-lucide="scissors" style="width: 32px; height: 32px;"></i>
+            </span>
+            <h3>Coiffure Cheveux</h3>
+            <p>
+              Coupe, brushing, coloration, balayage, lissage et soins capillaires personnalisés.
+              Nos experts révèlent toute la beauté de votre chevelure.
+            </p>
+          </article>
+          <article class="card feature">
+            <span style="color: var(--gold-500); margin-bottom: 0.5rem; display: block;">
+              <i data-lucide="sparkles" style="width: 32px; height: 32px;"></i>
+            </span>
+            <h3>Maquillage & Beauté</h3>
+            <p>
+              Maquillage jour et soirée, épilation, soins du visage et conseils beauté sur mesure.
+              Un look parfait pour chaque occasion.
+            </p>
+          </article>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+          <a class="btn" href="./pages/services.html">Découvrir tous nos services</a>
+        </div>
+      </section>
+
       <section class="section reveal-on-scroll" id="locations">
         <div class="section-heading">
-          <p class="kicker">Notre Signature</p>
-          <h2>Un écrin de luxe au cœur d'Haïti.</h2>
+          <p class="kicker">Notre Adresse</p>
+          <h2>Un havre de paix au cœur de la ville.</h2>
         </div>
         <div class="grid one">
           <article class="card location">
-            <h3>Delmas 65</h3>
-            <p>Faustin Premier Durandise #10, Port-au-Prince, Haïti</p>
+            <h3 style="color: var(--gold-500);">MA'AT Salon & Spa</h3>
+            <p>52, Avenue Panaméricaine, Port-au-Prince, Haïti</p>
             <ul>
-              <li>+509 4747-7221</li>
-              <li>Tous les jours sauf lundi · 7h — 17h</li>
+              <li>+509 4942-5656</li>
+              <li>Lundi au Samedi · 9h — 19h</li>
             </ul>
           </article>
         </div>
@@ -233,25 +266,25 @@
       <section class="section tinted reveal-on-scroll" id="contact">
         <div class="contact-card">
           <div>
-            <p class="kicker">Assistant DALIGHT</p>
-            <h2>Vôtre rituel commence ici.</h2>
-            <p>Prenez rendez-vous via WhatsApp ou par téléphone pour une consultation personnalisée.</p>
+            <p class="kicker" style="color: var(--gold-500);">Assistant MA'AT</p>
+            <h2>Votre moment de luxe commence ici.</h2>
+            <p>Prenez rendez-vous via WhatsApp ou par téléphone pour une expérience sur mesure.</p>
           </div>
           <div class="contact-details">
-            <p>Delmas 65, Faustin Premier Durandise #10</p>
+            <p>52, Avenue Panaméricaine</p>
             <p>Port-au-Prince, Haïti</p>
-            <p>Téléphone : <a href="tel:+50947477221">+5094747 7221</a></p>
-            <p>Email : <a href="mailto:dalightbeauty15mai@gmail.com">dalightbeauty15mai@gmail.com</a></p>
+            <p>Téléphone : <a href="tel:+50949425656">+509 4942-5656</a></p>
+            <p>Email : <a href="mailto:contact@maatspa.ht">contact@maatspa.ht</a></p>
           </div>
         </div>
       </section>
 
       <section class="section social-hub reveal-on-scroll" id="reseaux">
         <div class="social-hub__header">
-          <p class="kicker">Suivez l'Expérience</p>
-          <h2>Plongez dans l'univers DALIGHT sur nos réseaux.</h2>
+          <p class="kicker">Suivez l'Élégance</p>
+          <h2>Plongez dans l'univers MA'AT sur nos réseaux.</h2>
           <p>
-            Nous répondons à vos messages entre 09 h et 21 h (GMT-5). Découvrez nos services et conseils bien-être.
+            Nous répondons à vos messages entre 09h et 19h (GMT-5). Découvrez nos soins de luxe et conseils beauté.
           </p>
         </div>
         <div class="social-hub__grid">
@@ -261,8 +294,8 @@
             </span>
             <div>
               <h3>Instagram</h3>
-              <p>@dalightbeauty</p>
-              <a href="https://www.instagram.com/dalightbeauty?igsh=aTFoZjVlejlka2Zj?igsh=aTFoZjVlejlka2Zj" target="_blank" rel="noreferrer">Voir le profil</a>
+              <p>@maatspa.luxe</p>
+              <a href="https://www.instagram.com/maatspa.luxe" target="_blank" rel="noreferrer">Voir le profil</a>
             </div>
           </article>
           <article class="social-card">
@@ -271,8 +304,8 @@
             </span>
             <div>
               <h3>Facebook</h3>
-              <p>DALIGHT</p>
-              <a href="https://facebook.com/dalightbeauty" target="_blank" rel="noreferrer">Suivre l'actu</a>
+              <p>MA'AT Spa de Luxe</p>
+              <a href="https://facebook.com/maatspa" target="_blank" rel="noreferrer">Suivre l'actu</a>
             </div>
           </article>
           <article class="social-card">
@@ -281,8 +314,8 @@
             </span>
             <div>
               <h3>WhatsApp</h3>
-              <p>+509 4747-7221</p>
-              <a href="https://wa.me/50947477221" target="_blank" rel="noreferrer">Prendre rendez-vous</a>
+              <p>+509 4942-5656</p>
+              <a href="https://wa.me/50949425656" target="_blank" rel="noreferrer">Prendre rendez-vous</a>
             </div>
           </article>
           <article class="social-card">
@@ -291,8 +324,8 @@
             </span>
             <div>
               <h3>TikTok</h3>
-              <p>@dalightbeauty</p>
-              <a href="https://www.tiktok.com/@dalightbeauty?_r=1&_t=ZS-95gBGSdvje8" target="_blank" rel="noreferrer">Découvrir nos services</a>
+              <p>@maatspa.luxe</p>
+              <a href="https://www.tiktok.com/@maatspa.luxe" target="_blank" rel="noreferrer">Découvrir nos services</a>
             </div>
           </article>
           <article class="social-card qr-card">
@@ -310,11 +343,11 @@
     </main>
 
     <footer class="site-footer">
-      <p>© <span id="year"></span> DALIGHT. Tous droits réservés.</p>
+      <p>© <span id="year"></span> <strong style="color: var(--gold-500);">MA'AT</strong> Salon & Spa de Luxe. Tous droits réservés.</p>
       <div class="footer-links">
         <a href="./pages/login.html">Espace client</a>
         <a href="./pages/services.html">Nos Services</a>
-        <a href="mailto:dalightbeauty15mai@gmail.com">dalightbeauty15mai@gmail.com</a>
+        <a href="mailto:contact@maatspa.ht">contact@maatspa.ht</a>
       </div>
       <div class="footer-credit">
         <span>Conçu avec soin par <a href="https://cvisual.netlify.app/" target="_blank" rel="noopener" class="cvisual-link">Cvisual</a></span>
@@ -349,7 +382,7 @@
       </button>
       <div class="chat-window" id="chat-window" style="display:none;">
         <div class="chat-header">
-          <h4>Assistant DALIGHT</h4>
+          <h4 style="color: var(--gold-500);">Assistant MA'AT</h4>
           <span class="chat-status">En ligne</span>
           <button class="chat-close" id="chat-close">
             <i data-lucide="x"></i>

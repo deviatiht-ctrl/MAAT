@@ -331,8 +331,8 @@
   }
 
   .subscribe-btn {
-    font-size: 0.95rem;
-    padding: 0.9rem 1.3rem;
+    width: 100%;
+    justify-content: center;
   }
 }
 
@@ -561,7 +561,7 @@
     transform: translate(-50%, -50%) scale(0.9);
     width: 80px;
     height: 80px;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(13, 51, 40, 0.4);
     backdrop-filter: blur(8px);
     border-radius: 50%;
     opacity: 0;

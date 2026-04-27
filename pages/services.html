@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nos Services — DALIGHT</title>
+  <title>Nos Services — MA'AT Salon & Spa de Luxe</title>
   <link rel="icon" href="../assets/images/logodaligth.png?v=2" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,11 +22,11 @@
 <body data-page="services">
   <header class="site-header internal">
     <nav class="top-nav">
-      <a class="brand" href="../index.html">
-        <img class="brand-logo" src="../assets/images/logodaligth.png?v=2" alt="DALIGHT" />
-        <div>
-          <strong>DALIGHT</strong>
-          <small>L'Art du Bien-Être</small>
+      <a class="brand" href="../index.html" style="display: flex; align-items: center; gap: 0.75rem;">
+        <img src="../assets/images/maatlogo.png?v=2" alt="MA'AT Logo" style="height: 56px; width: auto; object-fit: contain; border-radius: 0; background: none;" />
+        <div class="brand-text" style="display: flex; flex-direction: column; align-items: flex-start;">
+          <strong style="font-size: 1.4rem; letter-spacing: 0.1em; color: var(--gold-500);">MA'AT</strong>
+          <small style="font-size: 0.75rem; opacity: 0.9;">Salon & Spa de Luxe</small>
         </div>
       </a>
       <button class="nav-toggle" aria-label="Ouvrir la navigation">
@@ -55,11 +55,11 @@
 
   <main class="page-shell fade-in">
     <section>
-      <p class="kicker">Carte des Rituels</p>
-      <h1>L'art de la renaissance par le soin du cuir chevelu.</h1>
+      <p class="kicker" style="color: var(--gold-500);">Carte des Services</p>
+      <h1>L'art du bien-être et de la beauté.</h1>
       <p class="page-subtitle">
-        Chaque rituel DALIGHT inclut un diagnostic capillaire, une immersion sensorielle aux huiles précieuses
-        et un massage crânien profond pour une relaxation absolue.
+        Chaque soin MA'AT inclut un diagnostic personnalisé, des produits premium
+        et une expérience de luxe pour votre bien-être absolu.
       </p>
       <!-- Search & Filter -->
       <div class="services-controls">
@@ -206,11 +206,11 @@
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> DALIGHT. Tous droits réservés.</p>
+    <p>© <span id="year"></span> <strong style="color: var(--gold-500);">MA'AT</strong> Salon & Spa de Luxe. Tous droits réservés.</p>
     <div class="footer-links">
       <a href="./login.html">Espace client</a>
       <a href="./services.html">Nos Services</a>
-      <a href="mailto:dalightbeauty15mai@gmail.com">dalightbeauty15mai@gmail.com</a>
+      <a href="mailto:contact@maatspa.ht">contact@maatspa.ht</a>
     </div>
     <div class="footer-credit">
       <span>Conçu avec soin par <a href="https://cvisual.netlify.app/" target="_blank" rel="noopener"
@@ -279,7 +279,7 @@
       </button>
       <div class="chat-window" id="chat-window" style="display:none;">
         <div class="chat-header">
-          <h4>Assistant DALIGHT</h4>
+          <h4 style="color: var(--gold-500);">Assistant MA'AT</h4>
           <span class="chat-status">En ligne</span>
           <button class="chat-close" id="chat-close">
             <i data-lucide="x"></i>
@@ -351,7 +351,7 @@
       // ============================================
       // CART SYSTEM
       // ============================================
-      const CART_KEY = 'dalight:serviceCart';
+      const CART_KEY = 'maat:serviceCart';
       let cart = [];
 
       function loadCart() {
@@ -475,7 +475,7 @@
           return;
         }
         // Save cart items and redirect to new reservation system
-        localStorage.setItem('dalight:cartServices', JSON.stringify(cart));
+        localStorage.setItem('maat:cartServices', JSON.stringify(cart));
         window.location.href = './reservation-v2.html';
       }
 
