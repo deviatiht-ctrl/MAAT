@@ -650,6 +650,37 @@
         });
       }
     })();
+
+    // Auth button functionality - check login status
+    (function() {
+      const authBtn = document.getElementById('auth-btn');
+      const authSpan = authBtn?.querySelector('span');
+      const authIcon = authBtn?.querySelector('i');
+      
+      // Check if user is logged in (from localStorage)
+      const user = localStorage.getItem('maat_user');
+      const token = localStorage.getItem('maat_token');
+      
+      if (user && token) {
+        // User is logged in - show logout
+        if (authSpan) authSpan.textContent = 'Déconnexion';
+        if (authIcon) authIcon.setAttribute('data-lucide', 'log-out');
+        authBtn?.addEventListener('click', (e) => {
+          e.preventDefault();
+          localStorage.removeItem('maat_user');
+          localStorage.removeItem('maat_token');
+          window.location.reload();
+        });
+      } else {
+        // User is not logged in - show login
+        if (authSpan) authSpan.textContent = 'Connexion';
+        if (authIcon) authIcon.setAttribute('data-lucide', 'user');
+        authBtn?.setAttribute('href', './pages/login.html');
+      }
+      
+      // Refresh Lucide icons
+      if (window.lucide) lucide.createIcons();
+    })();
     </script>
   </body>
 </html>
